@@ -28,4 +28,4 @@ function clicked() {
 
 function reset() {
   location.reload(true);
-}6
+}
