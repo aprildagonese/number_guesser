@@ -20,12 +20,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   function clicked() {
     var inputValue = parseInt(guessBox.value);
+    let guessOutput = document.getElementById("guess");
     document.getElementById("info-text").innerHTML = "Your last guess was:";
-    document.getElementById("guess").innerHTML = inputValue;
+     guessOutput.innerHTML = inputValue;
     if (inputValue > secretNumber) {
       document.getElementById("result").innerHTML = "That is too high.";
     } else if ( inputValue < secretNumber) {
       document.getElementById("result").innerHTML = "That is too low.";
+    } else if ( isNaN(inputValue) ) {
+      guessOutput.innerHTML = "Blank";
+      document.getElementById("result").innerHTML = "Silly goose!";
     } else {
       document.getElementById("result").innerHTML = "That is correct! You win!";
     }
