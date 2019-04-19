@@ -7,11 +7,13 @@ const result = document.querySelector('#result')
 const resetButton = document.querySelector('#reset-button')
 const secretNumber = Math.floor(Math.random() * 100) + 1;
 
-guessButton.addEventListener('click', clicked);
-resetButton.addEventListener('click', reset);
 guessForm.addEventListener('submit', function (event) {
   event.preventDefault();
 });
+guessButton.addEventListener('click', clicked);
+clearButton.addEventListener('click', clear);
+resetButton.addEventListener('click', reset);
+
 
 function clicked() {
   var inputValue = parseInt(guessBox.value);
@@ -24,6 +26,10 @@ function clicked() {
   } else {
     document.getElementById("result").innerHTML = "That is correct! You win!";
   }
+}
+
+function clear() {
+  guessForm.reset(true);
 }
 
 function reset() {
